@@ -4,8 +4,9 @@ using namespace std;
 using ll = long long;
 
 void solve() {
-   
-}
+
+    cout.flush();
+}   
 
 int main() {
 
