@@ -4,9 +4,16 @@ using namespace std;
 using ll = long long;
 
 void solve() {
+    int n;
+    cin >> n;
+
+    for (int i = 1; i < 2 * n; i = i + 2) {
+        cout << i << " ";
+    }
+
+    cout << "\n";
 
     cout.flush();
-    return;
 }   
 
 int main() {
@@ -15,7 +22,7 @@ int main() {
     cin.tie(nullptr);
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     while(t--) {
         solve();

@@ -4,6 +4,14 @@ using namespace std;
 using ll = long long;
 
 void solve() {
+    int n, a, b;
+    cin >> n >> a >> b;
+
+    if (a + b + 2 <= n || (a == b && b == n)) {
+        cout << "Yes\n";
+    } else {
+        cout << "No\n";
+    }
 
     cout.flush();
     return;
@@ -15,7 +23,7 @@ int main() {
     cin.tie(nullptr);
 
     int t = 1;
-    // cin >> t;
+    cin >> t;
 
     while(t--) {
         solve();
