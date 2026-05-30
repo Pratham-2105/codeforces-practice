@@ -5,19 +5,19 @@ using ll = long long;
 
 void solve() {
 
-    cout.flush();
-    return;
+  cout.flush();
+  return;
 }   
 
 int main() {
 
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
 
-    int t = 1;
-    // cin >> t;
+  int t = 1;
+  cin >> t;
 
-    while(t--) {
-        solve();
-    }
+  while(t--) {
+    solve();
+  }
 }
