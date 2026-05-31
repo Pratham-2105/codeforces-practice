@@ -7,13 +7,20 @@ void solve() {
     ll a, b, n;
     cin >> a >> b >> n;
 
-    vector<int> arr(n);
+    vector<ll> arr(n);
     for (int i = 0; i < n; i++) {
       cin >> arr[i];
     }
 
-    ll total_sum = 0;
-  
+    ll min_time = b;
+    
+    for (int i = 0; i < n; ++i) {
+      min_time += min(arr[i], a - 1);
+    }
+
+    cout << min_time  << '\n';
+
+
     cout.flush();
     return;
 }   
