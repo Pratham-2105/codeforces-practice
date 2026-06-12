@@ -1,13 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 using ll = long long;
 
 void solve() {
+  ll n;
+  cin >> n;
 
-  cout.flush();
   return;
-}   
+}
 
 int main() {
 
@@ -17,7 +18,7 @@ int main() {
   int t = 1;
   cin >> t;
 
-  while(t--) {
+  while (t--) {
     solve();
   }
 }
