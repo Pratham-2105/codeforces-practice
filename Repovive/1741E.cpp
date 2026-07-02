@@ -21,11 +21,12 @@ void solve() {
   vector<bool> dp(n + 1, false);
   dp[0] = 1;
 
-  for (int i = 1; i <= n; ++i) {
-    if (i + b[i - 1] <= n && dp[i - 1])
-      dp[i + b[i - 1]] = true;
-    if (i - b[i - 1] >= 0 && dp[i - b[i - 1]])
-      dp[i] = true;
+  for (int i = 0; i < n; ++i) {
+    if (dp[i] && i + b[i] + 1 <= n)
+      dp[i + b[i] + 1] = true;
+
+    if (i - b[i] >= 0 && dp[i - b[i]])
+      dp[i + 1] = true;
   }
 
   cout << (dp[n] ? "YES\n" : "NO\n");
