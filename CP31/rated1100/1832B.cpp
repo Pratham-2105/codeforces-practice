@@ -20,27 +20,19 @@ void solve() {
   for (int i = 0; i < n; ++i)
     cin >> arr[i];
 
-  ll sum_all = accumulate(arr.begin(), arr.end(), 0);
-
   sort(arr.begin(), arr.end());
 
-  ll min_index = 0, max_index = n - 1;
-  for (int i = 1; i <= k; ++i) {
-    if (min_index + 1 < max_index) {
-      ll mn = arr[min_index] + arr[min_index + 1];
-      ll mx = arr[max_index];
-
-      if (mn > mx) {
-        sum_all -= mx;
-        max_index--;
-      } else {
-        sum_all -= mx;
-        min_index += 2;
-      }
-    }
+  vector<ll> prefix(n + 1);
+  for (int i = 0; i < n; ++i) {
+    prefix[i + 1] = prefix[i] + arr[i];
   }
 
-  cout << sum_all << '\n';
+  ll ans = 0;
+  for (int i = 0; i <= k; ++i) {
+    ans = max(ans, prefix[n - (k - i)] - prefix[2 * i]);
+  }
+
+  cout << ans << '\n';
   return;
 }
 
