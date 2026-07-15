@@ -11,27 +11,26 @@ using namespace std;
 using ll = long long;
 
 void solve() {
-  ll n, l, r;
-  cin >> n >> l >> r;
+  ll n, k;
+  cin >> n >> k;
 
-  vector<ll> ans;
+  vector<ll> arr(n);
+  for (int i = 0; i < n; ++i)
+    cin >> arr[i];
 
-  for (int i = 1; i <= n; ++i) {
+  map<ll, bool> mp;
 
-    ll temp = ((l + i - 1) / i) * i;
-    ans.push_back(temp);
+  for (auto it : arr)
+    mp[it] = true;
 
-    if (temp > r) {
-      cout << "NO\n";
+  for (int i = 0; i < n; ++i) {
+    if (mp.find(arr[i] - k) != mp.end()) {
+      cout << "YES\n";
       return;
     }
   }
 
-  cout << "YES\n";
-  for (auto it : ans) {
-    cout << it << " ";
-  }
-  cout << '\n';
+  cout << "NO\n";
 
   return;
 }
